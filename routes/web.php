@@ -1,5 +1,10 @@
 <?php
 
+use App\Http\Controllers\CarTypesController;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\PackagesController;
+use App\Http\Controllers\SchedulesController;
+use App\Http\Controllers\TrainersController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,6 +18,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/',[HomeController::class, 'index']);
+
+Route::get('/schedules',[SchedulesController::class, 'index']);
+
+Route::get('/packages', [PackagesController::class,'index']);
+
+Route::get('/trainers', [TrainersController::class,'index']);
+
+Route::get('/car-types', [CarTypesController::class,'index']);
